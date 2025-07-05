@@ -1,0 +1,5 @@
+.lemonshotenv/
+*.pt
+*.tflite
+*.pb
+s
