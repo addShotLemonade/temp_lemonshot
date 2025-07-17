@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝 배치 */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0B1215;
+  }
+  
+  .navbar-logo {
+    height: 40px; /* 로고 크기 조정 */
+    cursor: pointer;
+  }
+  
+  .navbar-restart-button {
+    background-color: #EC1333;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .navbar-restart-button:hover {
+    background-color: #b01129;
+  }
+  

@@ -1,0 +1,74 @@
+.userinfo-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row; /* .1과 .2를 좌우로 배치 */
+    gap: 60px; /* .1과 .2 사이 간격 */
+    align-items: flex-start;
+    position: relative;
+    justify-content: center;
+    background-color: #0B1215; /* 예시 배경 */
+    color: white; /* 전체 텍스트 흰색 */
+    font-family: 'Galmuri9', sans-serif; /* 예시 폰트 */
+  }
+
+  .userinfo-container .userinfo-header {
+    position: absolute;
+    left: 280px;
+    top: 40px;
+    color: white;
+    font-size: 28px;
+    font-family: 'Galmuri9', sans-serif;
+  }
+
+  .userinfo-container .userinfo-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px; 
+    gap: 20px;
+    color: white;
+    font-family: 'Galmuri9', sans-serif;
+
+  }
+
+  /* .toggle-contact button.selected,
+  button.selected {
+    background-color: #ff5577;
+    color: white;
+  } */
+  
+ /* 입력창 스타일 */
+.userinfo-container .userinfo-form input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+}
+
+/* 버튼 공통 */
+.userinfo-container button {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.userinfo-container button:hover {
+    background-color: #b10e28; /* hover 시 색상 변경 */
+    color: #fffacd; /* 약간 노란빛 흰색으로 변경 */
+  }
+
+/* 선택된 버튼 강조 */
+.userinfo-container .selected {
+  background-color: #EC1333;
+  color: white;
+}
+
+/* 에러 텍스트 */
+.error-text {
+  color: #ff6868;
+  font-weight: bold;
+  margin-top: 8px;
+}
