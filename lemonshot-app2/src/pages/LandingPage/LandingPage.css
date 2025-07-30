@@ -52,9 +52,8 @@
   }
 
   .start-button:hover {
-    background-color: #b10e28; /* hover 시 색상 변경 */
+    background-color: #3c292c; /* hover 시 색상 변경 */
     color: #fffacd; /* 약간 노란빛 흰색으로 변경 */
-
   }
 
   .start-bg {

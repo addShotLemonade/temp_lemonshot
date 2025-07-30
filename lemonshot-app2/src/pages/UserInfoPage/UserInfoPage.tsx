@@ -38,7 +38,15 @@ const UserInfoPage = () => {
           console.log({ name, gender, age, phone, instagram });
           // 다음 페이지로 이동하거나 서버로 전송
 
-          navigate('/');
+          navigate('/camera', {
+            state: {
+              name,
+              gender,
+              age,
+              contact: usePhone ? phone : instagram,
+              contactType: usePhone ? 'phone' : 'instagram',
+            },
+          });
         };
 
     return (

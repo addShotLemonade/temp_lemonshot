@@ -1,0 +1,28 @@
+/* IdealMatchFrame.css */
+.match-frame {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .candidate {
+    cursor: pointer;
+    text-align: center;
+    width: 40%;
+  }
+  
+  .candidate img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.2s;
+  }
+  
+  .candidate:hover img {
+    transform: scale(1.05);
+  }
+  
+  .vs-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
