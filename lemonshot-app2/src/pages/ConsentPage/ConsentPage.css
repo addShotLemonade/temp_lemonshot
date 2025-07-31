@@ -1,33 +1,51 @@
 .consent-container {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Galmuri9', sans-serif;
-    color: #333;
-  }
-  
-  .consent-form {
-    margin-top: 20px;
-  }
-  
-  .consent-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .consent-form button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #EC1333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .consent-form button:hover {
-    background-color: #b01129;
-  }
-  
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  color: #333;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.consent-text-frame {
+  border: 1.5px solid #666;
+  border-radius: 6px;
+  height: 280px;
+  overflow-y: scroll;
+  padding: 15px 20px;
+  background: #fafafa;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.consent-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.consent-form input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.consent-form button {
+  display: block;
+  width: 100%;
+  background-color: #EC1333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consent-form button:hover {
+  background-color: #3c292c;
+}

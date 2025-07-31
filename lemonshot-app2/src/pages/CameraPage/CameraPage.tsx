@@ -98,7 +98,6 @@ const CameraPage = () => {
       <NavBar />
 
       <div className="camera-page">
-        <h2 className="page-title">Camera Page</h2>
 
         <Webcam
           audio={false}

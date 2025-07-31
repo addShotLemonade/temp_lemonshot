@@ -1,46 +1,44 @@
-/* src/pages/SuccessPage.css */
-
 .success-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-  }
-  
-  .success-image {
-    width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .success-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  .success-buttons {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .success-buttons button {
-    padding: 12px 24px;
-    font-size: 16px;
-    background-color: crimson;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .success-buttons button:hover {
-    background-color: darkred;
-  }
-  
+  box-sizing: border-box; /* 추가: padding이 height에 포함되도록 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* height -> min-height로 변경하여 유연하게 */
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.success-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.success-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.success-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.success-buttons button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.success-buttons button:hover {
+  background-color: darkred;
+}

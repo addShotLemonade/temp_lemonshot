@@ -9,6 +9,7 @@ import CameraPage from '../pages/CameraPage/CameraPage.tsx';
 import SuccessPage from '../pages/SuccessPage/Success.tsx';
 import IdealWorldcupPage from '../pages/IdealWorldcupPage/IdealWorldcupPage.tsx';
 import FinalPage from '../pages/FinalPage/FinalPage.tsx';
+import FinalMessage from '../pages/FinalMessagePage/FinalMessagePage.tsx';
 
 const AppRoutes = () => (
   <Routes>
@@ -19,6 +20,8 @@ const AppRoutes = () => (
     <Route path="/success" element={<SuccessPage />} />
     <Route path="/idealworldcup" element={<IdealWorldcupPage />} />
     <Route path="/final" element={<FinalPage />} />
+    <Route path="/finalmessage" element={<FinalMessage />} />
+    
     
     
     {/*<Route path="/consent" element={<ConsentPage />} /> */}

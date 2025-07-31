@@ -1,4 +1,4 @@
-// src/components/IdealMatchFrame.tsx
+// C:\Users\yiuri\OneDrive\문서\GitHub\temp_lemonshot\lemonshot-app2\src\components\IdealMatchFrame.tsx
 import React from 'react';
 import './IdealMatchFrame.css';
 

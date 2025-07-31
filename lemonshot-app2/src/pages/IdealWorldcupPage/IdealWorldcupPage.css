@@ -1,0 +1,50 @@
+/* IdealWorldcupPage.css */
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 32px;
+    color: #333;
+  }
+  
+  .match-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+  }
+  
+  .match-buttons button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 180px;
+    text-align: center;
+  }
+  
+  .match-buttons button:hover {
+    transform: scale(1.05);
+  }
+  
+  .match-buttons img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .match-buttons div {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .round-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #555;
+  }
+  

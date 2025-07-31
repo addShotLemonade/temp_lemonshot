@@ -1,6 +1,11 @@
 [
     {"name": "아이유", "image": "/images/female/아이유.png"},
-    {"name": "장원영", "image": "/images/female/장원영.png"}
-    
+    {"name": "장원영", "image": "/images/female/장원영.png"},
+    { "name": "아이유", "image": "/images/female/아이유.png" },
+    { "name": "장원영", "image": "/images/female/장원영.png" },
+    { "name": "카리나", "image": "/images/female/카리나.png" },
+    { "name": "박보영", "image": "/images/female/박보영.png" },
+    { "name": "한소희", "image": "/images/female/한소희.png" },
+    { "name": "설윤", "image": "/images/female/설윤.png" }
   ]
   
