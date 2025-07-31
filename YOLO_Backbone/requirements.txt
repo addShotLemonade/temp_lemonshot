@@ -1,0 +1,7 @@
+tensorflow
+numpy
+opencv-python
+ultralytics
+pandas
+flask
+flask-cors
