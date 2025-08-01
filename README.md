@@ -1,5 +1,13 @@
-# lemonshot: YOLO 기반 이상형 찾기 AI 서비스
- faceNet, YOLO 모델 학습 및 추론 temp repo
+# 🍋lemonshot Ideal Match🍋: 공대생이지만 연애는 하고싶어
+ YOLO, facenet기반 이상형 찾기 AI 서비스
+
+![LemonShot Team Logo](src/pages/ConsentPage/logo2.svg)
+
+공대생들아!!! 데모데이에서 이상형 찾고 썸 타면서 사람답게 살자..
+
+---
+
+# 데이터셋 및 주요 아키텍쳐 설명
 
  
 # 프로젝트 설치 및 실행 가이드
@@ -23,5 +31,6 @@ pip install -r requirements.txt
 
 # 서버 실행
 python app.py
+
 
 
