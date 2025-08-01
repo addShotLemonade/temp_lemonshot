@@ -1,44 +1,143 @@
-.success-container {
-  box-sizing: border-box; /* 추가: padding이 height에 포함되도록 */
+.page-wrapper {
+  background-color: #0B1215;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* height -> min-height로 변경하여 유연하게 */
-  text-align: center;
-  background-color: #fff;
-  padding: 20px;
 }
 
-.success-image {
-  width: 200px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.success-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.success-buttons {
+.success-container {
+  flex: 1;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1rem;
+  font-family: "Jalnan Gothic", sans-serif;
+  font-size: 1.1rem;
+  color: #ddd;
 }
 
-.success-buttons button {
-  padding: 12px 24px;
-  font-size: 16px;
-  background-color: crimson;
+.success-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+  animation: bounce-vibrate 1.5s ease forwards;
+  transform-origin: center;
+}
+
+@keyframes bounce-vibrate {
+  0% { transform: scale(1) translateX(0); }
+  30% { transform: scale(1.3) translateX(-5px); }
+  50% { transform: scale(1.2) translateX(5px); }
+  70% { transform: scale(1.3) translateX(-5px); }
+  100% { transform: scale(1) translateX(0); }
+}
+
+.heart-gif {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #D9324A;
+  margin: 0;
+}
+
+/* 애니메이션 */
+.fade-in {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.fade-in.delay-1 { animation-delay: 0.4s; }
+.fade-in.delay-2 { animation-delay: 0.8s; }
+.fade-in.delay-3 { animation-delay: 4.4s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.fade-out-late {
+  animation: fadeOut 1s forwards;
+  animation-delay: 4.2s;
+  points-events: none;
+}
+
+@keyframes fadeOut {
+  to { opacity: 1; }
+}
+
+.red-text {
+  color: #D9324A;
+  text-align: center;
+  font-family: "Jalnan Gothic";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 39px */
+  letter-spacing: 1.3px;
+}
+
+.white-text {
   color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  text-align: center;
+  font-family: "Jalnan Gothic";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 51px */
+  letter-spacing: 1.7px;
 }
 
-.success-buttons button:hover {
-  background-color: darkred;
+.new-message {
+  color: #D9324A;
+  /* font-size: 3rem;
+  margin-top: 2rem; */
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 60px */
+  letter-spacing: 2px;
+}
+
+.new-message-2 {
+  text-align: center;
+  font-family: "Pretendard Variable";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 33px */
+  letter-spacing: 1.1px;
+}
+
+.button-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.svg-button {
+  width: 160px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.svg-button:hover {
+  transform: scale(1.05);
 }

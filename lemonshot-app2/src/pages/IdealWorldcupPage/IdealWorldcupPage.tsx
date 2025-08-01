@@ -1,17 +1,15 @@
-// C:\Users\yiuri\OneDrive\문서\GitHub\temp_lemonshot\lemonshot-app2\src\pages\IdealWorldcupPage\IdealWorldcupPage.tsx
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar.tsx';
-import IdealMatchFrame from '../../components/IdealMatchFrame'; 
+import vsIcon from '../../assets/images/vsicon.svg';
+import pickHoverIcon from '../../assets/images/pick-hover.svg';
 import './IdealWorldcupPage.css';
-
 
 type Candidate = {
   name: string;
   image: string;
 };
 
-// // 테스트용 후보 -> TODO: 이거 다른 파일에 정리하기
 const maleCandidates: Candidate[] = [
   { name: '송강', image: '/images/male/송강.png' },
   { name: '변우석', image: '/images/male/변우석.png' },
@@ -29,7 +27,6 @@ const femaleCandidates: Candidate[] = [
   { name: '설윤', image: '/images/female/설윤.png' },
 ];
 
-// 셔플 함수
 const shuffle = (array: Candidate[]) => [...array].sort(() => Math.random() - 0.5);
 
 const IdealWorldcupPage = () => {
@@ -47,7 +44,7 @@ const IdealWorldcupPage = () => {
     const opponentGender = gender === 'female' ? 'male' : 'female';
     const nameList = opponentGender === 'male' ? maleCandidates : femaleCandidates;
     const shuffled = shuffle(nameList);
-    setCandidates(shuffled.slice(0, 4)); // 2명으로 테스트
+    setCandidates(shuffled.slice(0, 4)); // 4명 테스트용
     setRound(0);
     setWinners([]);
   }, [gender]);
@@ -66,8 +63,8 @@ const IdealWorldcupPage = () => {
             age,
             contact,
             contactType,
-            idealTypeCelebrity: nextWinners[0].name  // ✅ 이거 추가!
-          }
+            idealTypeCelebrity: nextWinners[0].name,
+          },
         });
       } else {
         setCandidates(nextWinners);
@@ -85,28 +82,56 @@ const IdealWorldcupPage = () => {
   const left = candidates[round];
   const right = candidates[round + 1];
 
+  return (
+    <>
+      <NavBar />
+      <div className="worldcup-wrapper">
+        <div className="worldcup-title">이상형 월드컵</div>
+        <div className="round-indicator">
+          <div className="current-match">{Math.floor(round / 2) + 1}번째 대결</div>
+          <div className="total-round">/ {candidates.length}강</div>
+        </div>
 
-return (
-  <>
-    <NavBar />
-    <div>
-      <h2>이상형 월드컵</h2>
-      <div className="match-buttons">
-        <button onClick={() => handleSelect(left)}>
-          <img src={left.image} alt={left.name} />
-          <div>{left.name}</div>
-        </button>
-        <button onClick={() => handleSelect(right)}>
-          <img src={right.image} alt={right.name} />
-          <div>{right.name}</div>
-        </button>
+        <div className="match-area">
+          {/* 왼쪽 후보 */}
+          <div
+            className="candidate-card"
+            onClick={() => handleSelect(left)}
+            role="button"
+            tabIndex={0}
+            aria-label={`선택 ${left.name}`}
+          >
+            <img src={left.image} alt={left.name} className="candidate-image" />
+            <div className="overlay-red" />
+            <img src={pickHoverIcon} alt="Pick Hover" className="pick-hover-icon" />
+            <div className="candidate-info">
+              <div className="candidate-name">{left.name}</div>
+            </div>
+          </div>
+
+          {/* vs 아이콘 */}
+          <img src={vsIcon} alt="vs" className="vs-icon" />
+
+          {/* 오른쪽 후보 */}
+          <div
+            className="candidate-card"
+            onClick={() => handleSelect(right)}
+            role="button"
+            tabIndex={0}
+            aria-label={`선택 ${right.name}`}
+          >
+            <img src={right.image} alt={right.name} className="candidate-image" />
+            <div className="overlay-red" />
+            <img src={pickHoverIcon} alt="Pick Hover" className="pick-hover-icon" />
+            <div className="candidate-info">
+              <div className="candidate-name">{right.name}</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <p className="round-text">{candidates.length}강 - {Math.floor(round / 2) + 1}번째 대결</p>
-    </div>
-  </>
-);
-
+    </>
+  );
 };
 
 export default IdealWorldcupPage;
-

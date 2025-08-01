@@ -1,31 +1,116 @@
-/* FinalPage.css */
+.final-container {
+  background-color: #000;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 가운데 정렬 */
+  align-items: center;
+  color: #fff;
+  font-family: 'Pretendard Variable', sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-.container {
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Arial', sans-serif;
+.final-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 70px;
+  z-index: 1;
+}
+
+.final-image-wrapper {
+  position: relative;
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.final-image {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Sparkle 애니메이션 */
+.sparkle {
+  position: absolute;
+  animation: sparkle-fade 2.5s infinite ease-in-out;
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+  fill: #FFD700; /* 노란색 */
+}
+
+.sparkle-1 {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 0px;
+  animation-delay: 0s;
+}
+.sparkle-2 {
+  width: 25px;
+  height: 25px;
+  top: 30px;
+  right: -30px;
+  animation-delay: 0.5s;
+}
+.sparkle-3 {
+  width: 50px;
+  height: 50px;
+  bottom: -25px;
+  left: -25px;
+  animation-delay: 1s;
+}
+.sparkle-4 {
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  right: 10px;
+  animation-delay: 1.5s;
+}
+.sparkle-5 {
+  width: 35px;
+  height: 35px;
+  top: -30px;
+  right: 50px;
+  animation-delay: 2s;
+}
+
+@keyframes sparkle-fade {
+  0%, 100% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.5;
   }
-  
-  .final-image {
-    width: 200px;
-    height: auto;
-    border-radius: 20px;
-    margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  50% {
+    transform: scale(1.4) rotate(60deg);
+    opacity: 1;
   }
-  
-  .progress-bar-wrapper {
-    width: 60%;
-    height: 20px;
-    background-color: #eee;
-    margin: 40px auto 10px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    background-color: red;
-    transition: width 0.1s linear;
-  }
-  
+}
+
+.progress-bar-wrapper {
+  width: 60%;
+  height: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #ec1333;
+  transition: width 0.1s linear;
+}
+
+.loading-text {
+  color: #bbb;
+  font-size: 16px;
+  margin-top: 10px;
+}

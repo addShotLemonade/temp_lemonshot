@@ -1,78 +1,105 @@
-/* FinalMessagePage.css */
+.final-message-page {
+  background-color: black;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
 
-.message-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 80px;
-    font-family: 'Arial', sans-serif;
-  }
+.envelope-stack {
+  position: relative;
+  width: 40%; /* ← 크게 조정 */
+  height: 330px; /* ← 비율 맞춰 높이도 늘리기 */
+  perspective: 1000px;
+  margin: 0 auto; /* ← 수평 중앙 정렬 */;
+}
+
+/* 공통 레이어 */
+.layer {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: 0;
+}
+
+/* 편지 뒷면 */
+.layer.back {
+  z-index: 1;
+  width: 100%;
+}
+
+/* 편지 속지 전체 (이미지 + 텍스트 묶음) */
+.layer.inner-wrapper {
+  z-index: 2;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  top: 30px;
+  transition: transform 1s ease-in-out;
+  transform: translateY(0);
+}
+.layer.inner-wrapper.slide-up {
+  transform: translateY(-30px);
+}
+
+/* 속지 이미지 */
+.layer.inner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #B9ADAD 0%, #FFF 8.09%);
+}
+
+/* 속지 안의 텍스트 */
+.inner-text {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  /* font-family: 'Ownglyph brilliant', sans-serif; */
+  font-family: "Galmuri14", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 50px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #D9324A;
+  white-space: pre-line;
+  pointer-events: none;
   
-  .envelope {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background: #e0c097;
-    border: 2px solid #a9834b;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 1s ease-in-out;
-  }
-  
-  .envelope.open {
-    transform: translateY(-20px);
-  }
-  
-  .flap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: #a9834b;
-    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    z-index: 2;
-    transition: transform 1s ease-in-out;
-  }
-  
-  .envelope.open .flap {
-    transform: rotateX(180deg);
-    transform-origin: top;
-  }
-  
-  .letter {
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background: white;
-    padding: 20px;
-    font-size: 16px;
-    z-index: 1;
-    text-align: center;
-    border-radius: 6px;
-    opacity: 0;
-    transition: opacity 1s ease-in;
-  }
-  
-  .envelope.open .letter {
-    opacity: 1;
-  }
-  
-  .home-button {
-    margin-top: 40px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #d74a49;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .home-button:hover {
-    background-color: #b93838;
-  }
-  
+}
+
+/* 편지 앞면 덮개 */
+.layer.front {
+  z-index: 3;
+  left: 0;
+  top: 65%;
+  width: 100%;
+  height: auto;
+}
+
+/* '처음으로' 버튼 */
+.home-button {
+  margin-top: 300px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #D9324A;
+  border: 1px solid #D9324A;
+  border-radius: 32.61px;
+  width: 156.84px;
+  height: 44.26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.home-button:hover {
+  background-color: white;
+  color: #D9324A;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './FinalPage.css';
 import NavBar from '../../components/NavBar.tsx';
+import sparkle from '../../assets/images/sparkle.svg'; // SVG 직접 import
 
 const FinalPage = () => {
   const navigate = useNavigate();
@@ -10,7 +11,6 @@ const FinalPage = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // ✅ POST: 이상형 연예인만 업데이트
     if (winner?.name) {
       fetch('http://127.0.0.1:5000/set_ideal', {
         method: 'POST',
@@ -26,15 +26,13 @@ const FinalPage = () => {
         .catch((err) => console.error('❌ 저장 실패:', err));
     }
 
-    // 10초 후 이동
     const timer = setTimeout(() => {
       navigate('/finalmessage');
     }, 10000);
 
-    // 로딩바 진행
     const interval = setInterval(() => {
       setProgress((prev) => (prev >= 100 ? 100 : prev + 1));
-    }, 100); // 10초 동안 0 → 100%
+    }, 100);
 
     return () => {
       clearTimeout(timer);
@@ -47,17 +45,27 @@ const FinalPage = () => {
   }
 
   return (
-    <>
+    <div>
       <NavBar />
-      <div className="container">
-        <h1>최종 {winner.name}을(를) 선택하셨습니다!</h1>
-        <img src={winner.image} alt={winner.name} className="final-image" />
+      <div className="final-container">
+        <h1 className="final-title">🎉 최종 {winner.name}을(를) 선택하셨습니다! 🎉</h1>
+
+        <div className="final-image-wrapper">
+          <img src={sparkle} alt="Sparkle" className="sparkle sparkle-1" />
+          <img src={sparkle} alt="Sparkle" className="sparkle sparkle-2" />
+          <img src={winner.image} alt={winner.name} className="final-image" />
+          <img src={sparkle} alt="Sparkle" className="sparkle sparkle-3" />
+          <img src={sparkle} alt="Sparkle" className="sparkle sparkle-4" />
+          <img src={sparkle} alt="Sparkle" className="sparkle sparkle-5" />
+          
+        </div>
+
         <div className="progress-bar-wrapper">
           <div className="progress-bar" style={{ width: `${progress}%` }} />
         </div>
-        <p>결과 페이지로 이동 중...</p>
+        <p className="loading-text">마지막 페이지로 이동 중...</p>
       </div>
-    </>
+    </div>
   );
 };
 

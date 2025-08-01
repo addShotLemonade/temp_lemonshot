@@ -1,17 +1,19 @@
+// CameraPage.tsx
 import React, { useRef, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Webcam from 'react-webcam';
 import NavBar from '../../components/NavBar.tsx';
 import './CameraPage.css';
+import edgeIcon from '../../assets/images/edge.svg';
 
 const CameraPage = () => {
   const webcamRef = useRef<Webcam>(null);
   const navigate = useNavigate();
   const location = useLocation();
+
   const [loading, setLoading] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState("스페이스바를 눌러 얼굴을 캡처하세요.");
+
   const { name, gender, age, contact, contactType } = location.state || {};
 
   useEffect(() => {
@@ -22,33 +24,11 @@ const CameraPage = () => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [loading]);
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (loading) {
-      setProgress(0);
-      interval = setInterval(() => {
-        setProgress((old) => {
-          if (old >= 100) {
-            clearInterval(interval);
-            return 100;
-          }
-          return old + 2;
-        });
-      }, 50);
-    } else {
-      setProgress(0);
-    }
-    return () => clearInterval(interval);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [loading]);
 
   const capture = async () => {
     if (!webcamRef.current) return;
-
     const screenshot = webcamRef.current.getScreenshot();
 
     if (!screenshot) {
@@ -57,7 +37,7 @@ const CameraPage = () => {
     }
 
     setLoading(true);
-    setMessage("⏳ 얼굴 분석 중입니다...");
+    setMessage("⏳ 로딩중...");
 
     try {
       const response = await fetch("http://localhost:5000/analyze_face", {
@@ -76,10 +56,10 @@ const CameraPage = () => {
       const result = await response.json();
 
       if (result.status === "success") {
-        setMessage("✅ 벡터 분석 완료! 이동합니다...");
+        setMessage("✅ 로딩 완료!");
         setTimeout(() => {
           navigate("/success", {
-            state: { name, gender, age, contact, contactType }  // ✅ 정보 전달!
+            state: { name, gender, age, contact, contactType }
           });
         }, 1500);
       } else {
@@ -94,11 +74,9 @@ const CameraPage = () => {
   };
 
   return (
-    <>
+    <div className="page-wrapper">
       <NavBar />
-
       <div className="camera-page">
-
         <Webcam
           audio={false}
           ref={webcamRef}
@@ -107,22 +85,22 @@ const CameraPage = () => {
           className="webcam"
         />
 
-        <div className="capture-area" />
+        <div className="capture-area">
+          <img src={edgeIcon} className="edge-icon top-left" />
+          <img src={edgeIcon} className="edge-icon top-right" />
+          <img src={edgeIcon} className="edge-icon bottom-right" />
+          <img src={edgeIcon} className="edge-icon bottom-left" />
+        </div>
 
         <div className="overlay" />
 
         <p className="message">{message}</p>
 
         {loading && (
-          <div className="loader">
-            <div
-              className="loader-progress"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+          <p className="loading-text">로딩중...</p>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

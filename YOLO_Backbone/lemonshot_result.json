@@ -67,5 +67,28 @@
         ],
         "similarity_percent": "52.32%",
         "ideal_type_celebrity": "설윤"
+    },
+    {
+        "name": "효리",
+        "gender": "female",
+        "age": "25",
+        "contact_type": "instagram",
+        "contact": "todayfirstwork",
+        "visitor_embedding": [
+            0.011440236121416092,
+            -0.07052502036094666,
+            -0.04358601197600365,
+            0.022489985451102257,
+            0.05263384059071541
+        ],
+        "ideal_embedding": [
+            0.004347822163254023,
+            -0.022488702088594437,
+            -0.0665474385023117,
+            0.011740896850824356,
+            0.017491642385721207
+        ],
+        "similarity_percent": "64.50%",
+        "ideal_type_celebrity": "변우석"
     }
 ]
