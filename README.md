@@ -1,7 +1,7 @@
 # 🍋lemonshot Ideal Match🍋: 공대생이지만 연애는 하고싶어
  YOLO, facenet기반 이상형 찾기 AI 서비스
 
-![LemonShot Team Logo](src/pages/ConsentPage/logo2.svg)
+![LemonShot Team Logo](image.png)
 
 공대생들아!!! 데모데이에서 이상형 찾고 썸 타면서 사람답게 살자..
 
