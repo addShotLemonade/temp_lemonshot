@@ -1,13 +1,15 @@
-.page-wrapper {
+.userinfo-page-wrapper {
+  background-color: #0B1215;
+  height: 100vh;         /* 화면 전체 채움 */
+  overflow: hidden;      /* 스크롤 방지 */
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
 }
 
 
 
 .userinfo-container {
+  
   flex-grow: 1;
   overflow-y: auto;
   display: flex;

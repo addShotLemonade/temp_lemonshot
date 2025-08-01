@@ -31,7 +31,7 @@ const ConsentPage = () => {
   };
 
   return (
-    <div className="page-wrapper">
+    <div className="consent-page-wrapper">
       <NavBar2 />
       <main className="consent-container">
         <h1 className="consent-title">개인정보 처리방침 및 이용약관 동의</h1>

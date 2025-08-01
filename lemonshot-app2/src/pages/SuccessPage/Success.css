@@ -20,8 +20,8 @@
 }
 
 .success-icon {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 1rem;
   animation: bounce-vibrate 1.5s ease forwards;
   transform-origin: center;
@@ -105,8 +105,8 @@ h3 {
 
 .new-message {
   color: #D9324A;
-  /* font-size: 3rem;
-  margin-top: 2rem; */
+  /* font-size: 3rem; */
+  margin-top: 2rem; 
   font-size: 40px;
   font-style: normal;
   font-weight: 400;

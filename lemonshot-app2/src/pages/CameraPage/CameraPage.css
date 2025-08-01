@@ -1,8 +1,8 @@
-.page-wrapper {
-  /* display: flex;
+.camera-page-wrapper {
+  display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden; */
+  overflow: hidden;
 }
 
 

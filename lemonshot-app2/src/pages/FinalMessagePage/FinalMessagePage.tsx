@@ -20,9 +20,9 @@ const FinalMessagePage = () => {
   }, []);
 
   return (
-    <>
+    <div className='final-message-page-wrapper'>
       <NavBar />
-          <div className="final-message-page">
+      <div className="final-message-page">
       <div className="envelope-stack">
         <img src={LetterOuter} alt="Envelope Back" className="layer back" />
         
@@ -48,7 +48,7 @@ const FinalMessagePage = () => {
       </button>
     </div>
         
-    </>
+    </div>
   );
 };
 

@@ -74,7 +74,7 @@ const CameraPage = () => {
   };
 
   return (
-    <div className="page-wrapper">
+    <div className="camera-page-wrapper">
       <NavBar />
       <div className="camera-page">
         <Webcam

@@ -51,7 +51,7 @@ const UserInfoPage = () => {
   };
 
   return (
-    <>
+    <div className="userinfo-page-wrapper">
       <NavBar />
       <div className="userinfo-container">
         <div className="userinfo-header">
@@ -153,7 +153,7 @@ const UserInfoPage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

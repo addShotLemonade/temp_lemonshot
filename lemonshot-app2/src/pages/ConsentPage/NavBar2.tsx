@@ -13,12 +13,12 @@ const NavBar2 = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar2">
       {/* 로고 */}
-      <img src={logo2} alt="로고" className="navbar-logo" />
+      <img src={logo2} alt="로고" className="navbar2-logo" />
 
       {/* restart 버튼 */}
-      <button className="navbar-restart-button" onClick={handleRestart}>
+      <button className="navbar2-restart-button" onClick={handleRestart}>
         Restart
       </button>
     </nav>

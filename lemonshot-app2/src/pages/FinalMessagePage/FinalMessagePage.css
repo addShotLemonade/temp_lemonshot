@@ -1,6 +1,15 @@
+.final-page-wrapper {
+  background-color: #0B1215;
+  height: 100vh;         /* 화면 전체 채움 */
+  overflow: hidden;      /* 스크롤 방지 */
+  display: flex;
+  flex-direction: column;
+}
+
+
 .final-message-page {
   background-color: black;
-  min-height: 100vh;
+  min-height: calc(100vh - 140px);
   padding-top: 80px;
   display: flex;
   flex-direction: column;

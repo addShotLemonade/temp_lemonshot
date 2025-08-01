@@ -45,7 +45,7 @@ const FinalPage = () => {
   }
 
   return (
-    <div>
+    <div className="final-page-wrapper">
       <NavBar />
       <div className="final-container">
         <h1 className="final-title">🎉 최종 {winner.name}을(를) 선택하셨습니다! 🎉</h1>
