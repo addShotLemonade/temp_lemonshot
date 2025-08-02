@@ -190,7 +190,7 @@ const IdealWorldcupPage = () => {
     const opponentGender = gender === 'female' ? 'male' : 'female';
     const nameList = opponentGender === 'male' ? maleCandidates : femaleCandidates;
     const shuffled = shuffle(nameList);
-    setCandidates(shuffled.slice(0, 4)); // 4명 테스트용
+    setCandidates(shuffled.slice(0, 32)); // 4명 테스트용
     setRound(0);
     setWinners([]);
   }, [gender]);

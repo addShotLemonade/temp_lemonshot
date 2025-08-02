@@ -16,7 +16,7 @@ os.makedirs(FEMALE_DIR, exist_ok=True)
 os.makedirs(MALE_DIR, exist_ok=True)
 
 # --------- CSV 데이터 로드 ---------
-df = pd.read_csv(os.path.join(BASE_DIR, "celeb_data.csv"))
+df = pd.read_csv(os.path.join(BASE_DIR,"faceNet-vector", "celeb_data.csv"))
 df = df.rename(columns={"Celebrity Name": "celeb_name"})
 df["celeb_name"] = df["celeb_name"].apply(lambda x: unicodedata.normalize("NFC", x))
 
@@ -38,7 +38,7 @@ for idx, row in df.iterrows():
     name = row["celeb_name"]
     is_female = idx < 86
     folder = FEMALE_DIR if is_female else MALE_DIR
-    temp_dir = os.path.join(folder, "temp_" + name.replace(" ", "_"))
+    temp_dir = os.path.join(folder, name)
 
     os.makedirs(temp_dir, exist_ok=True)
     crawl_image(name, temp_dir)
