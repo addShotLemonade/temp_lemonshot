@@ -101,8 +101,8 @@ def analyze_face():
             "age": age,
             "contact_type": contact_type,
             "contact": contact,
-            "visitor_embedding": [float(x) for x in embedding[:5]],
-            "ideal_embedding": [float(x) for x in ideal_vector[:5]],
+            "visitor_embedding": [float(x) for x in embedding],
+            "ideal_embedding": [float(x) for x in ideal_vector],
             "similarity_percent": f"{similarity_percent:.2f}%",
             "ideal_type_celebrity": ideal_type_celebrity
         }
